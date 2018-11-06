@@ -1,0 +1,468 @@
+package com.hometask;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class tasks {
+    public static void main (String[] args){
+//        1. Напишите программу, которая вычисляет ваш вес на Луне с учетом того, что сила тяжести равна 16% от силы тяжести на Земле.
+
+                System.out.println("Задача №1:");
+
+                Scanner in = new Scanner(System.in);
+                System.out.print("Вес на земле: ");
+                double zemlya = in.nextDouble();
+
+                double moon=0.16;
+                double itog=zemlya*moon;
+                System.out.println("Вес на луне:  "+itog);
+
+//        2. Напишите метод, который будет увеличивать каждый элемент массива на 10%.
+                System.out.println("Задача №2:");
+                double b[] = { 5, 10, 0, -5, 16, -2 };
+                double mnoj = 1.1;
+                for (int i = 0; i < b.length; i++){
+                    b[i]=b[i]*mnoj;
+                    System.out.print(b[i]+" ");
+                }
+                System.out.println(" ");
+
+
+//        3. Напишите метод, который будет проверять является ли число палиндромом (одинаково читающееся в обоих направлениях).
+
+                System.out.println("Задача №3:");
+
+                System.out.print("Введите число для проверки на полиндром: ");
+                int polindrom = in.nextInt();
+
+                int[] chis = {1,2,3,4,3,2,1};
+                boolean t = true;
+                for(int i=0;i<chis.length;i++)
+                    if(chis[i]!=chis[chis.length-i-1])t=false;
+                System.out.println(t?"Это полиндром ":" Это не полиндром");
+
+
+
+
+
+//        4. Вывести на экран все четные цифры от 1 до 100 (используйте остаток от деления)
+                System.out.println("Задача №4:");
+                System.out.print("");
+                for (int i = 1; i <= 100; i++) {
+                    if(i % 2 != 1){
+                        System.out.print(i+" ");
+                    }
+                }
+                System.out.println("");
+
+//        5. Вывести на  экран все нечетные цифры от 1 до 15 (используйте остаток от деления)
+                System.out.println("Задача №5:");
+                for (int i = 1; i <= 15; i++) {
+                    if(i % 2 == 1){
+                        System.out.print(i+" ");
+                    }
+                }
+                System.out.println("");
+//        6. Вывести на  экран все четные цифры от 1 до 100 не используя остаток от деления (используя только цикл for)
+                System.out.println("Задача №6:");
+                for (int i = 2; i <= 100; i=i+2) {
+                    System.out.print(i+" ");
+                }
+                System.out.println("");
+
+
+//        7. Посчитать сумму цифр от 20 до 200 и результат вывести на экран (используя цикл for)
+                System.out.println("Задача №7:");
+
+                int sum=0;
+                for (int i = 20; i <= 200; i++) {
+                    sum = sum+i;
+                }
+                System.out.println("Сумма чисел от 20 до 200: "+sum);
+
+
+//        8. Пройти циклом по числам от 1 до 12 и вывести название месяца, соответствующее каждому числу (используя цикл и оператор if else)
+                System.out.println("Задача №8:");
+                for (int i = 1; i <= 12; i++) {
+                    int mesyac = i;
+                    switch(mesyac) {
+                        case 1:
+                            System.out.println("Январь");
+                            break;
+                        case 2:
+                            System.out.println("Февраль");
+                            break;
+                        case 3:
+                            System.out.println("Март");
+                            break;
+                        case 4:
+                            System.out.println("Апрель");
+                            break;
+                        case 5:
+                            System.out.println("Май");
+                            break;
+                        case 6:
+                            System.out.println("Июнь");
+                            break;
+                        case 7:
+                            System.out.println("Июль");
+                            break;
+                        case 8:
+                            System.out.println("Август");
+                            break;
+                        case 9:
+                            System.out.println("Сентябрь");
+                            break;
+                        case 10:
+                            System.out.println("Октябрь");
+                            break;
+                        case 11:
+                            System.out.println("Ноябрь");
+                            break;
+                        case 12:
+                            System.out.println("Декабрь");
+                            break;
+                    }
+                }
+
+//        9 Объявить 2 переменных целого типа. Необходимо поменять значения переменных так, чтобы значение первой
+//          оказалось во второй, а второй - в первой.
+                System.out.println("Задача №9:");
+                int fir=45, sec=3, third=0;
+                System.out.println(fir+"  "+sec);
+                third=fir;
+                fir=sec;
+                sec=third;
+                System.out.println(fir+"  "+sec);
+
+
+//        10. Напишите программу с тремя переменными целого типа, первым двум присвойте значения, а третьей переменной
+//        присвойте их сумму. Выведете значение третей переменной на экран.
+                System.out.println("Задача №10:");
+                System.out.println(third=sec+fir);
+//        11. Напишите программу с тремя переменными целого типа. Определить какое из них наибольшее.
+                System.out.println("Задача №11");
+                if(fir>sec && fir>third) {
+                    System.out.println(fir);
+                }
+                if(sec>fir && sec>third){
+                    System.out.println(sec);
+                } else{
+                    System.out.println(third);
+                }
+//        12. Напишите программу, в которой используются две переменные логического типа (boolean),
+//        присвойте им значения и выведете для каждой переменной на экран строку "истина", если переменная имеет
+//        значение true и "ложь", если переменная имеет значение false.
+                System.out.println("Задача №12:");
+                boolean num1=true, num2=false;
+                if(num1==true){
+                    System.out.println("Истина");
+                }else{
+                    System.out.println("Ложь");
+                }
+                if(num2==true){
+                    System.out.println("Истина");
+                }else{
+                    System.out.println("Ложь");
+                }
+
+//        13. Напишите программу, где двум строковым переменным присваиваются значения, третей же строковой
+//        перменных присвойте объединение (конкатенацию) двух предыдущих строк. Затем напечатайте значение
+//        третьей строковой переменной
+                System.out.println("Задача №13:");
+                String s1 = new String("fir");
+                String s2 = new String("st");
+                String s3=s1+s2;
+                System.out.println(s3);
+
+
+//        14. Создайте программу с двумя переменными целого типа, присвойте им значения, если первая переменная
+//        больше второй, то увеличьте её значение на 3, иначе увеличьте значение второй переменной на 8. В конце
+//        программы выведите значения обоих чисел на экран.
+                System.out.println("Задача №14:");
+                int numone=6, numtwo=9;
+                if(numone>numtwo){
+                    numone=numtwo+3;
+                }else{
+                    numone=numtwo+8;
+                }
+                System.out.println(numone+" "+numtwo);
+//        15. Выведете на экран все числа от 1 до 100 с помощью цикла (можно все три варианта в одной программе):
+//        for
+//        while
+//        do while
+                System.out.println("Задача №15:");
+                int u = 1;
+                for (u = 1; u <= 100; u++) {
+                    System.out.print(u+" ");
+                }
+                System.out.println(" ");
+
+                while (u <= 100) {
+                    System.out.print(u+" ");
+                    u++;
+                }
+                System.out.println(" ");
+                u = 1;
+                do {
+                    System.out.print(u+" ");
+                    u++;
+                } while (u <= 100);
+                System.out.println(" ");
+
+
+//        16. Вывести на экран ряд натуральных чисел от минимума до максимума с шагом. Например, если минимум 10,
+//            максимум 35, шаг 5, то вывод должен быть таким: 10 15 20 25 30 35. Минимум, максимум и шаг указываются
+//            пользователем (можно захардкодить).
+                System.out.println("Задача №16:");
+                System.out.print("MIN: ");
+                int min = in.nextInt();
+                System.out.print("MAX: ");
+                int max = in.nextInt();
+                System.out.print("Длинна шага: ");
+                int shag = in.nextInt();
+
+                for (int i = min; i <= max; i=i+shag) {
+                    System.out.print(i+" ");
+                }
+                System.out.println("");
+
+
+//        17. Все элементы массива поделить на значение наибольшего элемента этого массива.
+
+
+                System.out.println("Задача №17:");
+                int a[] = { 5, 10, 0, -5, 16, -2 };
+                int maxmass = a[0];
+                for (int i = 0; i < a.length; i++){
+                    System.out.print(a[i]+" ");
+                    if (maxmass < a[i])
+                        maxmass = a[i];
+                }
+                System.out.println(" ");
+                for(int i=0;i < a.length; i++ ){
+                    a[i]=a[i]/maxmass;
+                    System.out.print(a[i]+" ");
+                }
+                System.out.println(" ");
+
+
+
+//        18. Напишите метод переводящий рубли в доллары по заданному курсу. В качестве аргументов укажите кол-во рублей и курс.
+
+
+                System.out.println("Задача №18:");
+                System.out.print("Рублей BYN: ");
+                double byn = in.nextDouble();
+                System.out.print("Курс USD/BUN: ");
+                double kyrs = in.nextDouble();
+                double usd=byn*kyrs;
+                System.out.println(usd);
+
+
+//        Напишите программу, которая будет считать количество часов, минут и секунд в n-ном количестве суток.
+
+                System.out.println("Adv №2");
+                System.out.print("Суток: ");
+                int dnei = in.nextInt();
+                int chasov=24*dnei, minyt=chasov*60*dnei, secynd=chasov*60*60*dnei;
+
+                System.out.println("В "+dnei+" сутках "+chasov+" часов "+minyt+" минут или " +secynd+" секунд");
+
+
+        // Task 1
+        int[] myarray = {
+                132, 1234,1234,
+                153, 5141, 1235,
+                12543,324,1256
+        };
+        String[] myarray1 = {
+                "Python",
+                "SQL",
+                "C",
+                "C#",
+                "C++"
+        };
+        System.out.println("Array old: " + Arrays.toString(myarray));
+        Arrays.sort(myarray);
+        System.out.println("Array new: " + Arrays.toString(myarray));
+
+        System.out.println("Array old: " + Arrays.toString(myarray1));
+        Arrays.sort(myarray1);
+        System.out.println("Array new: " + Arrays.toString(myarray1));
+
+        //Task 2
+        int[] masFirst={
+                1900, 200,
+                300,400,500
+        };
+        int summ=0;
+        for(int i=0;i<masFirst.length;i++){
+            sum=summ+masFirst[i];
+        }
+        System.out.println("Сумма массива: " + summ);
+
+        //Task 3
+
+        summ=0;
+        for(int i=0;i<10;i++){
+            System.out.println("");
+            for(int j=0;j<10;j++){
+                System.out.print("-");
+            }
+        }
+        System.out.println(" ");
+
+        //Task 4
+
+        summ=0;
+        for(int i=0;i<masFirst.length;i++){
+            sum=summ+masFirst[i];
+            if(i==masFirst.length-1){
+                int middle = i;
+                sum = sum / middle;
+            }
+        }
+        System.out.println("Среднее значение массива: "+sum);
+
+        //Task 5
+        Scanner li = new Scanner(System.in);
+        System.out.print("Число для поиска: ");
+        int vvodnoe = li.nextInt();
+        for(int i=0;i<masFirst.length;i++){
+            if(masFirst[i]==vvodnoe){
+                System.out.println("Совпадение найжено. Номер в массиве: " + i);
+                sum=4545454;
+            }
+
+        }
+        if(sum!=4545454){
+            System.out.println("Совпадений нет");
+        }
+
+        //Task 6
+        System.out.print("Число для поиска номера в массиве: ");
+        int numSecond = in.nextInt();
+        for(int i=0;i<masFirst.length; i++){
+            if(masFirst[i]==numSecond){
+                System.out.println("Совпадение найдено. Номер в массиве: " + i);
+                sum=454545477;
+            }
+
+        }
+        if(sum!=454545477){
+            System.out.println("Совпадений нет");
+        }
+
+        //Task 7
+
+
+        System.out.print("Номер числа в массиве, которое будет удалено: ");
+        int numThird = in.nextInt();
+        for(int i=0;i<masFirst.length;i++){
+            if(masFirst[i]== numSecond){
+                System.out.println("Совпадение найдено. Номер в массиве: " + i);
+
+            }
+
+        }
+
+        //Task 8
+
+        int[] array = {29, 50, 4, 67, 6, 34, 0, 29};
+        int[] newarray = new int[10];
+
+        System.out.println("Source Array : "+Arrays.toString(array));
+
+        for(int i=0; i < array.length; i++) {
+            newarray[i] = array[i];
+        }
+        System.out.println("New Array: "+Arrays.toString(newarray));
+
+
+
+        //Task 9
+
+        int[] my_array = {95, 24, 36, 15, 36, 236, 53};
+
+        int position = 1;
+        int newValue = 6;
+
+        System.out.println("Array : "+ Arrays.toString(my_array));
+
+        for(int i=my_array.length-1; i > position; i--){
+            my_array[i] = my_array[i-1];
+        }
+        my_array[position] = newValue;
+        System.out.println("New Array: "+Arrays.toString(my_array));
+
+
+
+
+        //Task 10
+        int maxim=Integer.MIN_VALUE, minim=Integer.MAX_VALUE;
+
+        for(int i=0;i<masFirst.length;i++){
+            if(masFirst[i]>maxim){
+                maxim=masFirst[i];
+            }
+            if (masFirst[i] < minim) {
+                minim=masFirst[i];
+            }
+
+        }
+        System.out.println("Максимум: " + max + " Минимум: " + min);
+
+        //Task 11
+
+        int[] myarray2 = {
+                1789, 2035, 1899, 1456, 2013,
+                1458, 2458, 1254, 1472, 2365,
+                1456, 2165, 1457, 2456};
+        System.out.println("Данный: "+Arrays.toString(myarray2));
+        for(int i = 0; i < myarray1.length / 2; i++)
+        {
+            int temp = myarray2[i];
+            myarray1[i] = myarray1[myarray2.length - i - 1];
+            myarray2[myarray2.length - i - 1] = temp;
+        }
+        System.out.println("Новый: "+Arrays.toString(myarray2));
+
+        //Task 12
+
+        int[] my_array3 = {1, 2, 5, 5, 6, 6, 7, 8, 9};
+
+        for (int i = 0; i < my_array3.length-1; i++) {
+            for (int c = i + 1; c < my_array3.length; c++) {
+                if ((my_array3[i] == my_array3[c]) && (i != c)) {
+                    System.out.println("Дубл: " + my_array3[c]);
+         //Task 13
+
+                    String[] my_array4 = {"bcd", "abd", "jude", "bcd", "oiu", "gzw", "oiu"};
+
+                    for (int f = 0; i < my_array4.length-1; f++)
+                    {
+                        for (int g = i+1; g < my_array4.length; g++)
+                        {
+                            if( (my_array4[i].equals(my_array4[g])) && (i != g) )
+                            {
+                                System.out.println("Дубл: "+my_array4[g]);
+                            }
+                        }
+                    }
+                }
+
+                //Task 14
+
+
+
+
+
+
+
+
+
+            }
+            }
+        }
+    }
