@@ -1,0 +1,127 @@
+    //Класс машина
+    //5 деталей
+    //Цена
+    //Название + марка
+    //1. Вывести стоймость
+    //2. Вывести названиеэ
+    //3.Название фирмы + название модели
+    //4. Провести замену детали(Изменить цену и пересчитать сумму итогову)
+            package com.lesson3;
+
+    import java.util.Scanner;
+
+    class Car {
+        private String Name;
+        private int Auto;
+        private int Kolich;
+        private String Mark;
+        private int Data;
+        private int Kilometraj;
+
+        public Car(String name, int auto, int kolich, String marc, int data, int kilometraj) {
+            Name = name;
+            Auto = auto;
+            Kolich = kolich;
+            Mark = marc;
+            Data = data;
+            Kilometraj = kilometraj;
+        }
+
+        public String getName() {
+            return Name;
+        }
+
+        public void setName(String name) {
+            Name = name;
+        }
+
+        public int getAuto() {
+            return Auto;
+        }
+
+        public void setAuto(int auto) {
+            Auto = auto;
+        }
+
+        public int getKolich() {
+            return Kolich;
+        }
+
+        public void setKolich(int kolich) {
+            Kolich = kolich;
+        }
+
+        public String getMark() {
+            return Mark;
+        }
+
+        public void setMarca(String mark) {
+            Mark = mark;
+        }
+
+        public int getData() {
+            return Data;
+        }
+
+        public void setData(int data) {
+            Data = data;
+        }
+
+        public int getKilometraj() {
+            return Kilometraj;
+        }
+
+        public void setKilometraj(int kilometraj) {
+            Kilometraj = kilometraj;
+        }
+    }
+
+    class MyFamilyMachines {
+        public static void main(String[] args) {
+            Car Car1 = new Car("Sasha", 3, 1, "BMV", 2012, 56323);
+            Car Car2 = new Car("Katya", 2, 1, "Hundai", 2015, 90222);
+            Car Car3 = new Car("Tolik", 6, 1, "Hundai", 2015, 150987);
+            Car Car4 = new Car("Lera", 1, 1, "Audi", 2005, 123);
+            Car Car5 = new Car("Sveta", 3, 2, "Renault", 2011, 54000);
+            Car Car6 = new Car("Maks", 1, 5, "Dacha", 1989, 4332123);
+
+
+            int[] Avt = {
+                    Car1.getKolich(),
+                    Car2.getKolich(),
+                    Car3.getKolich(),
+                    Car4.getKolich(),
+                    Car5.getKolich(),
+                    Car6.getKolich()};
+
+
+
+            System.out.print("Info o voditele (vvedite nomer {1-6}): ");
+            Scanner in = new Scanner(System.in);
+            int i = in.nextInt();
+
+
+                    if (i == 1) {
+                        System.out.println("Voditel: " + Car1.getName() + "\n" + "Skol'ko vsego: " + Car1.getAuto() + "\n" + "Skol'ko sejchas: " + Car1.getKolich() + "\n" + "Marka avto: " + Car1.getMark() + "\n" + "Data vipuska avto: " + Car1.getData() + "\n" + "Skol'ko proehal: " + Car1.getKilometraj());
+                    }
+
+                    if (i == 2) {
+                        System.out.println("Voditel: " + Car2.getName() + "\n" + "Skol'ko vsego: " + Car2.getAuto() + "\n" + "Skol'ko sejchas: " + Car2.getKolich() + "\n" + "Marka avto: " + Car2.getMark() + "\n" + "Data vipuska avto: " + Car2.getData() + "\n" + "Skol'ko proehal: " + Car2.getKilometraj());
+                    }
+                    if (i == 3) {
+                        System.out.println("Voditel: " + Car3.getName() + "\n" + "Skol'ko vsego: " + Car3.getAuto() + "\n" + "Skol'ko sejchas: " + Car3.getKolich() + "\n" + "Marka avto: " + Car3.getMark() + "\n" + "Data vipuska avto: " + Car3.getData() + "\n" + "Skol'ko proehal: " + Car3.getKilometraj());
+                    }
+                    if (i == 4) {
+                        System.out.println("Voditel: " + Car4.getName() + "\n" + "Skol'ko vsego: " + Car4.getAuto() + "\n" + "Skol'ko sejchas: " + Car4.getKolich() + "\n" + "Marka avto: " + Car4.getMark() + "\n" + "Data vipuska avto: " + Car4.getData() + "\n" + "Skol'ko proehal: " + Car4.getKilometraj());
+                    }
+                    if (i == 5) {
+                        System.out.println("Voditel: " + Car5.getName() + "\n" + "Skol'ko vsego: " + Car5.getAuto() + "\n" + "Skol'ko sejchas: " + Car5.getKolich() + "\n" + "Marka avto: " + Car5.getMark() + "\n" + "Data vipuska avto: " + Car5.getData() + "\n" + "Skol'ko proehal: " + Car5.getKilometraj());
+                    }
+                    if (i == 6) {
+                        System.out.println("Voditel: " + Car6.getName() + "\n" + "Skol'ko vsego: " + Car6.getAuto() + "\n" + "Skol'ko sejchas: " + Car6.getKolich() + "\n" + "Marka avto: " + Car6.getMark() + "\n" + "Data vipuska avto: " + Car6.getData() + "\n" + "Skol'ko proehal: " + Car6.getKilometraj());
+                    }
+                }
+            }
+
+
+
