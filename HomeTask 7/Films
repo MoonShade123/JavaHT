@@ -1,0 +1,39 @@
+package com.hometask.hometask7;
+
+public class Films {
+    public void filmsCollection() {
+
+        Inner inner = new Inner();
+
+        Inner[] films = new Inner[inner.numberOfFilmsInCollection];
+        for (int i = 0; i < inner.numberOfFilmsInCollection - 1; i++) {
+            System.out.println(films[i] = new Inner("Stiven Spilberg", 156 + i, "18"));
+        }
+
+    }
+
+    class Inner extends Films {
+        private String producer;
+        private int duration;
+        private String age;
+        private int numberOfFilmsInCollection = 5;
+
+        @Override
+        public String toString() {
+            return "Film{" +
+                    "producer='" + producer + '\'' +
+                    ", duration=" + duration +
+                    ", MinimalAge='" + age + '\'' + '}';
+
+        }
+
+        public Inner() {
+        }
+
+        public Inner(String producer, int duration, String age) {
+            this.producer = producer;
+            this.duration = duration;
+            this.age = age;
+        }
+    }
+}
