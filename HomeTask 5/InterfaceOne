@@ -1,0 +1,5 @@
+package com.hometask.hometask5;
+
+public interface InterfaceOne extends InterfaceTwo {
+    public void firstInterfaceMethod();
+}
