@@ -1,0 +1,186 @@
+package com.hometask.hometask8;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class HomeTask8 {
+    private static String text = "Малыш Малыш* тяжело дышал, был бледен и крайне 45 слаб - его состояние вызывало у нас серьезные опасения. Мы решили не рисковать и вызывали separator на себя детскую реанимацию.* Первую помощь 33, конечно, мы окажем, а вот separator довезем ли кроху до больницы - неизвестно, машина наша не оборудована должным образом.\n" +
+
+            "Судя по всему, у двухлетнего мальчика - тяжелейшая пневмония в крайне запущенной форме. Спрашиваем у матери - когда последний раз был77 педиатр? Услышав ответ, уронили челюсть на пол.";
+    private char[] c;
+    private String[] strArr;
+    private String[] newStrArr;
+    private int o = 1;
+    private int literNumber = 5;
+    private String symbolForChange = "V";
+    private String[] duplicateWord;
+    private int x;
+    private final static String[] vowels = {"а", "о", "э", "ы", "и", "у", "е", "ё", "ю", "я"};
+    private int Sum;
+    private int others;
+    private int consonants;
+    private int wordDuration;
+
+    public static void main(String[] args) {
+        HomeTask8 hometask8 = new HomeTask8();
+        System.out.println(HomeTask8.text);
+        hometask8.task1();
+        hometask8.task2();
+        hometask8.task3();
+        hometask8.task4();
+        hometask8.task5();
+        hometask8.task6();
+        hometask8.task7();
+        hometask8.task8();
+
+
+    }
+
+    private void task1() {
+
+        System.out.println("Task 1");
+        StringBuilder stringBuilder = new StringBuilder();
+        strArr = text.split(" ");
+        for (String s : strArr) {
+            c = s.toCharArray();
+            c[0] = Character.toUpperCase(c[0]);
+            stringBuilder
+                    .append(c)
+                    .append(" ");
+
+        }
+        System.out.println(stringBuilder);
+    }
+
+    private void task2() {
+        System.out.println("Task 2");
+        for (int i = 0; i < text.lastIndexOf(" "); ) {
+            i = text.indexOf(" ", text.indexOf(" ", i));
+            i++;
+            o++;
+        }
+        System.out.println("Number of _ in text: " + o);
+    }
+
+    private void task3() {
+        System.out.println("Task 3");
+
+        //Need some help here
+
+
+    }
+
+    private void task4() {
+        System.out.println("Task 4");
+        char[] symbolForChangeChar = symbolForChange.toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        strArr = text.split(" ");
+        for (String s : strArr) {
+            c = s.toCharArray();
+            if (literNumber <= c.length) {
+                c[literNumber - 1] = symbolForChangeChar[0];
+            }
+            stringBuilder
+                    .append(c)
+                    .append(" ");
+
+        }
+        System.out.println(stringBuilder);
+
+    }
+
+    private void task5() {
+        System.out.println("Task 5");
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(text);
+        System.out.println(stringBuilder.delete(text.indexOf("*"), text.lastIndexOf("*") + 1));
+
+    }
+
+
+    private void task6() {
+        System.out.println("Task 6");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        strArr = text.split(" ");
+
+
+        for (String s : strArr) {
+            o = 0;
+            x = 0;
+            for (int i = 0; i < strArr.length - 1; i++) {
+                if (s.equalsIgnoreCase(strArr[i])) {
+                    o++;
+                }
+
+            }
+            if (o > 1) {
+                System.out.println("Word " + s + " duplicate " + o + " times");
+            }
+
+        }
+    }
+
+    private void task7() {
+        System.out.println("Task 7");
+        strArr = text.split("[\\.\\!\\?]");
+        o = 0;
+
+        consonants = 0;
+        others = 0;
+        Sum = 0;
+        System.out.println("In text " + strArr.length + " sentences");
+        for (String s : strArr) {
+
+            others = task7SymbolSearch(" ", s)
+                    + task7SymbolSearch("*", s)
+                    + task7SymbolSearch("-", s)
+                    + task7SymbolSearch(",", s)
+                    + task7SymbolSearch(".", s);
+            for (String f : vowels) {
+                Sum = Sum + task7SymbolSearch(f, s);
+
+            }
+            consonants = s.length() - others - Sum;
+            if (consonants > Sum) {
+                System.out.println("In this sentence consonants more then vowels: " + consonants + " : " + Sum);
+            } else {
+                System.out.println("In this sentence vowels more then consonants: " + Sum + " : " + consonants);
+            }
+            consonants = 0;
+            others = 0;
+            Sum = 0;
+
+
+        }
+
+    }
+
+    private int task7SymbolSearch(String symbol, String searchFragment) {
+        o = 0;
+        for (int i = 0; i < searchFragment.lastIndexOf(symbol); ) {
+            i = searchFragment.indexOf(symbol, searchFragment.indexOf(symbol, i));
+            i++;
+            o++;
+        }
+        return o;
+    }
+
+    private void task8() {
+        System.out.println("Task 8");
+        wordDuration = 5;
+        o = 0;
+        Pattern pattern = Pattern.compile("([A-ZА-Я][^.!?]*)\\?");
+        Matcher m = pattern.matcher(text);
+        while (m.find()) {
+            System.out.println(m.group());
+            newStrArr = m.group().split(" ");
+            for (String f : newStrArr) {
+                if (f.length() == wordDuration) {
+                    System.out.println("Words with " + wordDuration + " letters: " + f);
+                }
+            }
+
+        }
+    }
+}
