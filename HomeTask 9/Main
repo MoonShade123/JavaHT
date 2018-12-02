@@ -1,0 +1,26 @@
+package com.hometask.hometask9;
+
+public class Main {
+    public void userList() throws Exception {
+
+        Users[] user = new Users[4];
+        user[0] = new Users("Katya", "Titovich", 31, "Female");
+        user[1] = new Users("Sasha", "Beloruskiy", 11, "Male");
+        user[2] = new Users("GlebPrekrasneisiy", "Sahorov", 17, "Male");
+        user[3] = new Users("Slava", "Kolovich", 43, "Male");
+        Validator validator = new Validator();
+
+        for (int i = 0; i < 4; i++) {
+            validator.validatorCheck(user[i]);
+            if (validator.getSmt() == false) {
+                System.out.println(user[i].toString());
+            }
+        }
+
+    }
+
+    public static void main(String[] args) throws Exception {
+        Main main = new Main();
+        main.userList();
+    }
+}
